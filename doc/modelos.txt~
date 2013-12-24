@@ -1,0 +1,54 @@
+[
+  Nosotros
+    |
+      -nombre;
+      -descripcion;
+      -lat;
+      -lon;
+      -fotos
+    |
+      +construct()
+]
+
+[
+  Gato
+    |
+      -nombre;
+      -aka;
+      -edad;
+      -color;
+      -raza;
+      -descripcion;
+      -fotos;
+      -videos;
+      -sexo;
+      -historiaMedica;
+      -formulariosAdpopcion
+    |
+      +construct()
+]
+
+[
+  Adoptante
+    |
+      -nombre;
+      -mascotas;
+      -mail;
+      -fb;
+      -telCel;
+      -telFijo;
+      -mensajes
+    |
+      +construct()
+]
+
+[
+  Adopcion
+    |
+      -fecha;
+      -mascota;
+      -adoptante;
+      -formularioAdopcion
+    |
+      +construct()
+]
