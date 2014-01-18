@@ -1,5 +1,5 @@
-## Nosotros ##
-<img src="http://yuml.me/diagram/plain;/class/[Nosotros%7C-nombre;-descripcion;-ubicacion;-fotos%7C+construct()]">
+## InfoNosotros ##
+<img src="http://yuml.me/diagram/plain;/class/[InfoNosotros%7C-nombre;-descripcion;-lon;-lat;-fotos%7C+construct()]">
 ## Gato ##
 <img src="http://yuml.me/diagram/plain;/class/[Gato%7C-nombre;-edad;-color;-raza;-descripcion;-fotos;-videos;-sexo;-historiaMedica;-formulariosAdpopcion%7C+construct()][Adoptante%7C-nombre;-mascotas;-mail;-fb;-telCel;-telFijo;">
 ## Adpotante ##

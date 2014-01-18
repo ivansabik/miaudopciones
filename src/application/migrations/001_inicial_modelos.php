@@ -147,14 +147,14 @@ class Migration_inicial_modelos extends CI_Migration {
         );
 
         $this->dbforge->add_field($fields);
-        $this->dbforge->create_table('nosotros');
+        $this->dbforge->create_table('info_nosotros');
     }
 
     public function down() {
         $this->dbforge->drop_table('adopciones');
         $this->dbforge->drop_table('adoptantes');
         $this->dbforge->drop_table('gatos');
-        $this->dbforge->drop_table('nosotros');
+        $this->dbforge->drop_table('info_nosotros');
     }
 
 }
