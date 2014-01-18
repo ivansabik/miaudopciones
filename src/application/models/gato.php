@@ -37,7 +37,7 @@ class Gato extends CI_Model {
         return $listaGatos;
     }
 	
-	function find($id) {
+     function find($id) {
         $query = $this->db->query('SELECT id, nombre, aka, edad, color, raza, descripcion, sexo, historia_medica FROM gatos WHERE id='.$id);
 		$resultado = $query->row();
 		$gato = new Gato;
@@ -51,6 +51,23 @@ class Gato extends CI_Model {
 		$gato->boolSexo=$resultado->sexo;
 		$gato->strHistoriaMedica=$resultado->historia_medica;
         return $gato;
+    }
+
+    function insert(){
+
+          $data = array(
+          'nombre' => $this->strNombre ,
+          'aka' => $this->strAka ,
+          'edad' => $this->intEdad ,
+          'color' => $this->strColor ,
+          'raza' => $this->strRaza ,
+          'descripcion' => $this->strDescripcion ,
+          'sexo' => $this->boolSexo ,
+          'historia_medica' => $this->strHistoriaMedica
+          );
+
+          $this->db->insert('gatos', $data); 
+
     }
 
 }
