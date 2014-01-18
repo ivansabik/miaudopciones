@@ -1,4 +1,4 @@
-katzarrama
+Meows-R-Us
 ===
 
-Aplicación web integrada con FB para ayudar a la adopción de gatos. Permite agregar perfiles, fotos, eventos y gestionar el proceso por medio de fomrularios de adopción.
+Plataforma web para poner en contacto adoptantes con gatimiaus. Permite agregar perfiles, fotos, eventos y tener fomrularios de adopción actualizados.

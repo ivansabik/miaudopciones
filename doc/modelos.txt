@@ -33,7 +33,7 @@
   Adoptante
     |
       -nombre;
-      -mascotas;
+      -gatos;
       -mail;
       -fb;
       -telCel;
