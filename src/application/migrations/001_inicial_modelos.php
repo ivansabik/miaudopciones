@@ -3,31 +3,24 @@
 class Migration_inicial_modelos extends CI_Migration {
 
     public function up() {
-        /*
-          Column	Type	Null	Default	Comments	MIME
-          id	int(11)	No
-          fecha	int(11)	No
-          id_gato	int(11)	No
-          id_adoptante	int(11)	No
-          id_formulario_adopcion	int(11)	No
-         */
+        // Adopciones
         $this->dbforge->add_field('id');
         $fields = array(
             'fecha' => array(
                 'type' => 'DATE',
                 'null' => false,
             ),
-            'gato_id' => array(
+            'gato' => array(
                 'type' => 'INT',
                 'constraint' => '50',
                 'null' => false,
             ),
-            'adoptante_id' => array(
+            'adoptante' => array(
                 'type' => 'INT',
                 'constraint' => '50',
                 'null' => false,
             ),
-            'formulario_adopcion_id' => array(
+            'formularioAdopcion' => array(
                 'type' => 'INT',
                 'constraint' => '50',
                 'null' => false,
@@ -36,16 +29,7 @@ class Migration_inicial_modelos extends CI_Migration {
         $this->dbforge->add_field($fields);
         $this->dbforge->create_table('adopciones');
 
-        /*
-          Column	Type	Null	Default	Comments	MIME
-          id	int(11)	No
-          nombres	varchar(50)	No
-          apellidos	varchar(50)	No
-          mail	varchar(50)	No
-          fb	bigint(20)	No
-          tel_cel	int(10)	No
-          tel_fijo	int(10)	No
-         */
+        // Adoptantes
         $this->dbforge->add_field('id');
         $fields = array(
             'nombres' => array(
@@ -63,37 +47,30 @@ class Migration_inicial_modelos extends CI_Migration {
             'fb' => array(
                 'type' => 'BIGINT',
             ),
-            'tel_cel' => array(
+            'telCel' => array(
                 'type' => 'INT',
                 'constraint' => '10',
             ),
-            'tel_fijo' => array(
+            'telFijo' => array(
                 'type' => 'INT',
                 'constraint' => '10',
             ),
+            'urlFoto' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '200',
+            )
         );
         $this->dbforge->add_field($fields);
         $this->dbforge->create_table('adoptantes');
 
-        /*
-          Column	Type	Null	Default	Comments	MIME
-          id	int(11)	No
-          nombre	varchar(20)	No
-          aka	varchar(50)	No
-          edad	int(11)	No
-          color	varchar(10)	No
-          raza	varchar(20)	No
-          descripcion	longtext	No
-          sexo	varchar(1)	No
-          historia_medica	longtext	No
-         */
+        // Gatos
         $this->dbforge->add_field('id');
         $fields = array(
             'nombre' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '20',
             ),
-            'aka' => array(
+            'alias' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '50',
             ),
@@ -116,20 +93,14 @@ class Migration_inicial_modelos extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '1',
             ),
-            'historia_medica' => array(
+            'historiaMedica' => array(
                 'type' => 'TEXT',
             ),
         );
         $this->dbforge->add_field($fields);
         $this->dbforge->create_table('gatos');
 
-        /*
-          Column	Type	Null	Default	Comments	MIME
-          nombre	varchar(50)	No
-          descripcion	longtext	No
-          lat	float	No
-          lon	float	No
-         */
+        // Info Nosotros
         $fields = array(
             'nombre' => array(
                 'type' => 'VARCHAR',
@@ -145,16 +116,37 @@ class Migration_inicial_modelos extends CI_Migration {
                 'type' => 'FLOAT',
             ),
         );
-
         $this->dbforge->add_field($fields);
-        $this->dbforge->create_table('info_nosotros');
+        $this->dbforge->create_table('infoNosotros');
+
+        // Fotos gatos
+        $this->dbforge->add_field('id');
+        $fields = array(
+            'gato' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),
+            'descripcion' => array(
+                'type' => 'TEXT',
+            ),
+            'url' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '200',
+            ),
+            
+        );
+        $this->dbforge->add_field($fields);
+        $this->dbforge->create_table('fotosGatos');
+        
+        // Formularios adopcion
+        
     }
 
     public function down() {
         $this->dbforge->drop_table('adopciones');
         $this->dbforge->drop_table('adoptantes');
         $this->dbforge->drop_table('gatos');
-        $this->dbforge->drop_table('info_nosotros');
+        $this->dbforge->drop_table('infoNosotros');
     }
 
 }

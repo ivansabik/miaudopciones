@@ -38,9 +38,8 @@
 |
 */
 
-$route['default_controller'] = "welcome";
-$route['404_override'] = '';
-
+$route['default_controller'] = "gatos";
+$route['404_override'] = 'azazel404';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

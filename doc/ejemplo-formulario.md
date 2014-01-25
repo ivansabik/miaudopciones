@@ -89,6 +89,7 @@ recién nacidos como en adultos. Durante años se ha estigmatizado al gato como 
 27. Si por cualquier motivo deseas renunciar a tu vínculo de adopción con el gatito(a) que te entregamos ¿te comprometes a devolverlo poniéndote en contacto conmigo?
 28. ¿Estas consiente de que este gatito(a) deberá de vivir siempre dentro de tu casa, ya que en la calle podrá sufrir accidentes, enfermedades y situaciones que ponen en riesgo su vida?
 29.¿Estos son los cuidados básicos que requerirá el adoptado a lo largo de su vida:
+
 - Visitas periódicas al veterinario
 - Desparasitación (cada 6 meses)
 - Vacunación (Anual)
@@ -102,11 +103,12 @@ recién nacidos como en adultos. Durante años se ha estigmatizado al gato como 
 - Premios, motivaciones, juguetes.
 - Tiempo de convivencia, juego y educación.
 - Cama, y lugar para refugio del clima.
- 30. ¿Estas dispuesto a darle estos cuidados?
- 31.¿Tienes Medico Veterinario de cabecera?, o podemos recomendarte uno respecto a la zona que vives
- 32. ¿Qué piensas de que un animal de compañía, viva en la azotea?
- 33. ¿Para ti que es un animal de compañía?
- 34. ¿Te comprometes a NO someter a tu mascota a alguna operación que modifique su apariencia física (corte de orejas, cola, desungulación etc), en beneficio de tu comodidad, moda o gusto?
+
+30. ¿Estas dispuesto a darle estos cuidados?
+31.¿Tienes Medico Veterinario de cabecera?, o podemos recomendarte uno respecto a la zona que vives
+32. ¿Qué piensas de que un animal de compañía, viva en la azotea?
+33. ¿Para ti que es un animal de compañía?
+34. ¿Te comprometes a NO someter a tu mascota a alguna operación que modifique su apariencia física (corte de orejas, cola, desungulación etc), en beneficio de tu comodidad, moda o gusto?
 
 ### OBSERVACIONES ###
 

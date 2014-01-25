@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/katzarrama/src/';
+$config['base_url']	= 'http://localhost/meowsrus/src/';
 
 /*
 |--------------------------------------------------------------------------

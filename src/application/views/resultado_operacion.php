@@ -1,6 +1,6 @@
 Mensaje
 <pre>
-<?php
-echo $mensaje;
-?>
+    <?php
+    echo $mensaje;
+    ?>
 </pre>
