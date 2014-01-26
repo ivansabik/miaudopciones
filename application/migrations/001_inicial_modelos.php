@@ -45,14 +45,15 @@ class Migration_inicial_modelos extends CI_Migration {
                 'constraint' => '50',
             ),
             'fb' => array(
-                'type' => 'BIGINT',
+                'type' => 'TEXT',
+                'null' => true,
             ),
             'telCel' => array(
-                'type' => 'INT',
+                'type' => 'VARCHAR',
                 'constraint' => '10',
             ),
             'telFijo' => array(
-                'type' => 'INT',
+                'type' => 'VARCHAR',
                 'constraint' => '10',
             ),
             'urlFoto' => array(
@@ -88,13 +89,19 @@ class Migration_inicial_modelos extends CI_Migration {
             ),
             'descripcion' => array(
                 'type' => 'TEXT',
+                'null' => true,
             ),
             'sexo' => array(
-                'type' => 'VARCHAR',
+                'type' => 'INT',
                 'constraint' => '1',
             ),
             'historiaMedica' => array(
                 'type' => 'TEXT',
+                'null' => true,
+            ),
+            'urlFoto' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '200',
             ),
         );
         $this->dbforge->add_field($fields);
@@ -108,12 +115,36 @@ class Migration_inicial_modelos extends CI_Migration {
             ),
             'descripcion' => array(
                 'type' => 'TEXT',
+                'null' => true,
             ),
             'lat' => array(
                 'type' => 'FLOAT',
             ),
             'lon' => array(
                 'type' => 'FLOAT',
+            ),
+            'usuario' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '20',
+            ),
+            'hashim' => array(
+                'type' => 'TEXT',
+            ),
+            'mail' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),
+            'fb' => array(
+                'type' => 'TEXT',
+                'null' => true,
+            ),
+            'telCel' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '10',
+            ),
+            'telFijo' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '10',
             ),
         );
         $this->dbforge->add_field($fields);
@@ -128,18 +159,17 @@ class Migration_inicial_modelos extends CI_Migration {
             ),
             'descripcion' => array(
                 'type' => 'TEXT',
+                'null' => true,
             ),
             'url' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '200',
             ),
-            
         );
         $this->dbforge->add_field($fields);
         $this->dbforge->create_table('fotosGatos');
-        
+
         // Formularios adopcion
-        
     }
 
     public function down() {
@@ -147,6 +177,7 @@ class Migration_inicial_modelos extends CI_Migration {
         $this->dbforge->drop_table('adoptantes');
         $this->dbforge->drop_table('gatos');
         $this->dbforge->drop_table('infoNosotros');
+        $this->dbforge->drop_table('fotosGatos');
     }
 
 }

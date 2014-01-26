@@ -11,15 +11,15 @@ class Gato extends CI_Model {
     public $descripcion;
     public $sexo;
     public $historiaMedica;
+    public $urlFoto;
 
     function __construct() {
         parent::__construct();
     }
 
     function findAll() {
-        $query = $this->db->query('SELECT id, nombre, alias, edad, color, raza, descripcion, sexo, historiaMedica FROM gatos');
-        $listaGatos = array();
-        // TODO Refactor porque nombres atributos = nombres bd 
+        $query = $this->db->get('gatos');
+        $gatos = array();
         foreach ($query->result() as $row) {
             $gato = new Gato;
             $gato->id = $row->id;
@@ -31,13 +31,14 @@ class Gato extends CI_Model {
             $gato->descripcion = $row->descripcion;
             $gato->sexo = $row->sexo;
             $gato->historiaMedica = $row->historiaMedica;
-            $listaGatos[] = $gato;
+            $gato->urlFoto = $row->urlFoto;
+            $gatos[] = $gato;
         }
-        return $listaGatos;
+        return $gatos;
     }
 
     function find($id) {
-        $query = $this->db->query('SELECT id, nombre, alias, edad, color, raza, descripcion, sexo, historiaMedica FROM gatos WHERE id=' . $id);
+        $query = $this->db->query('SELECT * from gatos WHERE id=' . $id);
         $resultado = $query->row();
         $gato = new Gato;
         $gato->id = $resultado->id;
@@ -49,6 +50,7 @@ class Gato extends CI_Model {
         $gato->descripcion = $resultado->descripcion;
         $gato->sexo = $resultado->sexo;
         $gato->historiaMedica = $resultado->historiaMedica;
+        $gato->urlFoto = $resultado->urlFoto;
         return $gato;
     }
 
@@ -61,13 +63,27 @@ class Gato extends CI_Model {
             'raza' => $this->raza,
             'descripcion' => $this->descripcion,
             'sexo' => $this->sexo,
-            'historiaMedica' => $this->historiaMedica
+            'historiaMedica' => $this->historiaMedica,
+            'urlFoto' => $this->urlFoto
         );
         $this->db->insert('gatos', $data);
     }
 
     function delete($id) {
-        $query = $this->db->query('DELETE FROM gatos WHERE id=' . $id);
+        $this->db->delete('gatos', array('id' => $id));
+    }
+
+    function getFotos() {
+        $query = $this->db->query('SELECT * from fotosGatos WHERE id=' . $id);
+        $fotos = array();
+        foreach ($query->result() as $row) {
+            $foto = new FotoGato;
+            $foto->id = $row->id;
+            $foto->descripcion = $row->descripcion;
+            $foto->url = $row->url;
+            $fotos[] = $foto;
+        }
+        return $fotos;
     }
 
 }

@@ -1,5 +1,0 @@
-[InfoNosotros|-nombre;-descripcion;-lat;-lon;-usuario;-hashim|+construct()]
-[Gato|-id;-nombre;-alias;-edad;-color;-raza;-descripcion;-sexo;-historiaMedica;-fotos;-formulariosAdpopcion|+construct()]
-[Adoptante|-id;-nombres;-apellidos;-gatos;-mail;-fb;-telCel;-telFijo;-urlFoto|+construct()]
-[Adopcion|-id;-fecha;-gato;-adoptante;-formularioAdopcion|+construct()]
-[FotoGato|-id;-gato;-descripcion;-url|+construct()]
