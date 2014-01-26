@@ -32,7 +32,8 @@ class Gatos extends CI_Controller {
             $this->Gato->raza = $this->db->escape($this->input->post('raza'));
             $this->Gato->descripcion = $this->db->escape($this->input->post('descripcion'));
             $this->Gato->sexo = $this->db->escape($this->input->post('sexo'));
-            $this->Gato->historiaMedica = $this->db->escape($this->input->post('historia_medica'));
+            $this->Gato->historiaMedica = $this->db->escape($this->input->post('historiaMedica'));
+            $this->Gato->urlFoto = $this->db->escape($this->input->post('urlFoto'));
             $this->Gato->insert();
             $data['mensaje'] = 'Gato agregado: ' . print_r($this->Gato);
             $this->load->view('resultado_operacion', $data);

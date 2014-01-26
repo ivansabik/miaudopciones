@@ -19,14 +19,17 @@
         foreach ($gatos as $gato) {
             echo '
                 <tr>
-                    <td><img src="' . $gato->urlFoto . '" height="100" width="100"/></td>
+                    <td><img src="' . $gato->urlFoto . '" height="100" width="100" class="img-circle"/></td>
                     <td><a href="' . base_url('index.php/gatos/ver/' . $gato->id) . '">' . $gato->nombre . '</a></td>
                     <td>' . $gato->edad . '</td>
                     <td>' . $gato->sexo . '</td>
                 </tr>';
         }
+        echo '
+            </tbody>
+        </table>';
     }
     ?>
-</tbody>
-</table>
+
+</div>
 <?php $this->load->view('includes/footer'); ?>

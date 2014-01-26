@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Meooowrror, la página no existe</title>
-        <style type="text/css">
-            body {
-                background: url('<?= base_url() ?>css/img/azazel404.png') no-repeat;
-                background-size: 75%;  
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NOMBRE ORGANIZACION by Meows-R-Us</title>
+        <link href="<?= base_url('css/bootstrap-flatly.css'); ?>" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="<?= base_url('js/bootstrap.min.js'); ?>"></script>
+        <style>
+            html { 
+                background: url('<?= base_url() ?>css/img/azazel404.png') no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            .bloque {
+                width: 700px ;
+                margin-left: auto ;
+                margin-right: auto ;
+                font-size: 700%;
+                font-weight: bold;
             }
         </style>
     </head>
     <body>
-        <h1>
-            No existe esa página, si crees que es un error contáctanos:
-            <p>
-                <a href="#">meowsrus@mandroslabs.com</a>
-            </p>
-        </h1>
+        <div class="container bloque">
+            No existe esa página
+        </div>
     </body>
 </html>
