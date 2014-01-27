@@ -74,7 +74,7 @@ class Gato extends CI_Model {
     }
 
     function getFotos() {
-        $query = $this->db->query('SELECT * from fotosGatos WHERE id=' . $id);
+        $query = $this->db->query('SELECT * from fotosGatos WHERE id=' . $this->id);
         $fotos = array();
         foreach ($query->result() as $row) {
             $foto = new FotoGato;
@@ -84,6 +84,25 @@ class Gato extends CI_Model {
             $fotos[] = $foto;
         }
         return $fotos;
+    }
+
+    function getTextoEdad() {
+        $textoEdad = '';
+        $numAnios = ceil($this->edad / 12);
+        $numMeses = $this->edad % 12;
+        if ($numAnios > 0) {
+            $textoEdad.= $numAnios . ' anios ';
+        }
+        if ($numMeses > 0) {
+            $textoEdad.= $numMeses . ' meses';
+        }
+        return $textoEdad;
+    }
+
+    function getTextoSexo() {
+        if ($this->sexo == 1)
+            return 'Macho';
+        return 'Hembra';
     }
 
 }

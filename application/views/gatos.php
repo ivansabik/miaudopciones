@@ -1,11 +1,10 @@
 <?php $this->load->view('includes/header'); ?>
-<div class="container">
-    <h1>Nuestros gatitos</h1>
-    <?php
-    if (count($gatos) == 0) {
-        echo 'Por el momento no hay ningún minino en adopción';
-    } else {
-        echo '
+<h1>Nuestros gatos</h1>
+<?php
+if (count($gatos) == 0) {
+    echo 'Por el momento no hay ningún minino en adopción';
+} else {
+    echo '
             <table class="table" width="50%">
             <thead>
                 <tr>
@@ -16,20 +15,18 @@
                 </tr>
             </thead>
             <tbody>';
-        foreach ($gatos as $gato) {
-            echo '
-                <tr>
-                    <td><img src="' . $gato->urlFoto . '" height="100" width="100" class="img-circle"/></td>
-                    <td><a href="' . base_url('index.php/gatos/ver/' . $gato->id) . '">' . $gato->nombre . '</a></td>
-                    <td>' . $gato->edad . '</td>
-                    <td>' . $gato->sexo . '</td>
-                </tr>';
-        }
+    foreach ($gatos as $gato) {
         echo '
+                <tr>
+                    <td><div class="fotolistado"><a href="' . base_url('index.php/gatos/ver/' . $gato->id) . '"><img src="' . $gato->urlFoto . '"/></a></div></td>
+                    <td><a href="' . base_url('index.php/gatos/ver/' . $gato->id) . '">' . $gato->nombre . '</a></td>
+                    <td>' . $gato->getTextoEdad() . '</td>
+                    <td>' . $gato->getTextoSexo() . '</td>
+                </tr>';
+    }
+    echo '
             </tbody>
         </table>';
-    }
-    ?>
-
-</div>
+}
+?>
 <?php $this->load->view('includes/footer'); ?>

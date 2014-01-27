@@ -6,8 +6,6 @@ if (!defined('BASEPATH'))
 class Nosotros extends CI_Controller {
 
     public function index() {
-        $this->load->database();
-        $this->load->model('infoNosotros');
         $data['nosotros'] = $this->InfoNosotros->find();
         $this->load->view('nosotros_ver', $data);
     }

@@ -81,7 +81,7 @@ class Migration_inicial_modelos extends CI_Migration {
             ),
             'color' => array(
                 'type' => 'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '20',
             ),
             'raza' => array(
                 'type' => 'VARCHAR',
@@ -102,6 +102,10 @@ class Migration_inicial_modelos extends CI_Migration {
             'urlFoto' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '200',
+            ),
+            'fecha' => array(
+                'type' => 'DATE',
+                'null' => false,
             ),
         );
         $this->dbforge->add_field($fields);
@@ -146,8 +150,14 @@ class Migration_inicial_modelos extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '10',
             ),
+            'tema' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '20',
+                'default' => 'flatly',
+            ),
         );
         $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('nombre', TRUE);
         $this->dbforge->create_table('infoNosotros');
 
         // Fotos gatos

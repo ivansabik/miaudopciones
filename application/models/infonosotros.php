@@ -12,6 +12,7 @@ class InfoNosotros extends CI_Model {
     public $fb;
     public $telCel;
     public $telFijo;
+    public $tema;
 
     function __construct() {
         parent::__construct();
@@ -19,7 +20,7 @@ class InfoNosotros extends CI_Model {
 
     function find() {
         $query = $this->db->query('SELECT * FROM infoNosotros');
-        $resultados = $query->result();
+        $resultados = $query->row();
         $infoNosotros = new InfoNosotros;
         $infoNosotros->nombre = $resultados->nombre;
         $infoNosotros->descripcion = $resultados->descripcion;
@@ -29,12 +30,13 @@ class InfoNosotros extends CI_Model {
         $infoNosotros->fb = $resultados->fb;
         $infoNosotros->telCel = $resultados->telCel;
         $infoNosotros->telFijo = $resultados->telFijo;
+        $infoNosotros->tema = $resultados->tema;
         return $infoNosotros;
     }
 
     function auth($usuario, $hashim) {
         $usuario = $this->db->escape($usuario);
-        $hashim = $this->db->escape($hashim);
+        $hashim = sha1($this->db->escape($hashim));
         $query = $this->db->query("SELECT * FROM infoNosotros WHERE usuario='" . $usuario . " AND hashim='" . $hashim . "");
         $resultado = $query->row();
         if ($resultado) {

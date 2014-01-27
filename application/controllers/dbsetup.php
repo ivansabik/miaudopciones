@@ -19,9 +19,6 @@ class DBSetup extends CI_Controller {
 
     public function datosPrueba() {
         if (ENVIRONMENT == 'development') {
-            $this->load->database();
-
-            $this->load->model('InfoNosotros');
             $this->InfoNosotros->nombre = 'Botitas mojadas';
             $this->InfoNosotros->descripcion = 'Somos una AC que rescata mininos sin hogar';
             $this->InfoNosotros->lat = 19.396304;
@@ -32,6 +29,7 @@ class DBSetup extends CI_Controller {
             $this->InfoNosotros->fb = 'botitas.mojadas';
             $this->InfoNosotros->telCel = '5536744626';
             $this->InfoNosotros->telFijo = '5552925474';
+            $this->InfoNosotros->tema = 'flatly';
             $this->InfoNosotros->insert();
 
             $this->load->model('Gato');
