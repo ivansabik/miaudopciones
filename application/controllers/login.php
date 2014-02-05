@@ -7,7 +7,8 @@ class Login extends CI_Controller {
 
     public function index() {
         // Auth si existe usuario loggeado
-        $this->load->view('login');
+        $data['nosotros'] = $this->InfoNosotros->find();
+        $this->load->view('login', $data);
     }
 
     public function auth() {
@@ -16,10 +17,11 @@ class Login extends CI_Controller {
         if ($this->_validate($usuario, $pass)) {
             // Guardar en sesion
             $this->load->model('InfoNosotros');
-            $data['infoNosotros'] = $this->InfoNosotros->find();
+            $data['nosotros'] = $this->InfoNosotros->find();
             $this->load->view('nosotros_editar', $data);
         } else {
             $data['mensaje'] = 'Usuario o contrasenia invalidos';
+            $data['nosotros'] = $this->InfoNosotros->find();
             $this->load->view('resultado_operacion', $data);
         }
     }

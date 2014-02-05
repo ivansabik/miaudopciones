@@ -2,6 +2,7 @@
 <div class="row">
     <div class="col-md-6">
         <h1><?= $gato->nombre ?></h1>
+        <div class="fb-like" data-href="<?= base_url('index.php/gatos/ver/' . $gato->id) ?>" data-send="false" data-layout="button_count" data-width="70" data-show-faces="false"></div>
         <div class="fotoperfil">
             <img src="<?= $gato->urlFoto ?>"/>
         </div>
@@ -28,5 +29,9 @@
 </div>
 <div class="row">
     <h3>Fotos</h3>
+</div>
+<div class="row">
+    <h3>Comentarios</h3>
+    <div class="fb-comments" data-href="<?= base_url('index.php/gatos/ver/' . $gato->id) ?>" data-numposts="5" data-colorscheme="light"></div>
 </div>
 <?php $this->load->view('includes/footer'); ?>

@@ -10,7 +10,8 @@ class Azazel404 extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('azazel404');
+        $data['nosotros'] = $this->InfoNosotros->find();
+        $this->load->view('azazel404', $data);
     }
 
 }

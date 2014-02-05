@@ -44,6 +44,27 @@
     </head>
     <body>
     <body>
+        <div id="fb-root"></div>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId: '<?= FB_APPID ?>',
+                    status: true,
+                    xfbml: true
+                });
+            };
+
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <div class="container">
             <div class="row centrado logo">
                 <img src="<?= base_url('css/img/logo.png') ?>"/>
@@ -53,6 +74,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="<?= site_url('gatos') ?>">Nuestros Gatos</a></li>
                         <li><a href="#">Últimas adopciones</a></li>
+                        <li><a href="#">Eventos</a></li>
                         <li><a href="<?= site_url('nosotros') ?>">Nosotros</a></li>
                     </ul>
                 </div>
@@ -60,6 +82,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <h1><?= $nosotros->nombre ?></h1>
+                    <div class="like">
+                        <div class="fb-like" data-href="<?= site_url('nosotros') ?>" data-send="false" data-layout="button_count" data-width="70" data-show-faces="false"></div>
+                    </div>
                     <p><?= $nosotros->descripcion ?></p>
                     <h3>Correo electronico</h3>
                     <p><?= $nosotros->mail ?></p>
