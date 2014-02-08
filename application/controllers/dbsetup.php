@@ -29,9 +29,9 @@ class DBSetup extends CI_Controller {
             $this->InfoNosotros->fb = 'botitas.mojadas';
             $this->InfoNosotros->telCel = '5536744626';
             $this->InfoNosotros->telFijo = '5552925474';
-            $this->InfoNosotros->tema = 'flatly';
+            $this->InfoNosotros->tema = 1;
             $this->InfoNosotros->insert();
-
+			
             $this->load->model('Gato');
             $this->Gato->nombre = 'Santino';
             $this->Gato->alias = 'botas, botitas, schweni, titino';
@@ -77,7 +77,8 @@ class DBSetup extends CI_Controller {
             $this->Gato->sexo = 0;
             $this->Gato->urlFoto = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-frc3/t1/481502_10151394221425120_992162879_n.jpg';
             $this->Gato->insert();
-
+			
+			
             //$this->load->model('Adoptante');
             //$this->load->model('Adopcion');
             //$this->load->model('FotoGato');
