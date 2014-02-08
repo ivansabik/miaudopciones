@@ -87,8 +87,21 @@ class Gato extends CI_Model {
     }
 
     function getTextoEdad() {
-        $textoEdad = '';
-        $numAnios = ceil($this->edad / 12);
+        
+		    $textoEdad = '';
+
+        
+        $numAnios = $this->edad ;
+       if($numAnios<12)
+	      {
+		   $textoEdad=$numAnios . ' meses ';
+		  
+		  }
+	   elseif($numAnios>11)
+	   {
+	   
+	      
+	      $numAnios = floor($this->edad / 12);
         $numMeses = $this->edad % 12;
         if ($numAnios > 0) {
             $textoEdad.= $numAnios . ' anios ';
@@ -96,7 +109,12 @@ class Gato extends CI_Model {
         if ($numMeses > 0) {
             $textoEdad.= $numMeses . ' meses';
         }
+	   
+	   }
+         	  
+	   
         return $textoEdad;
+    
     }
 
     function getTextoSexo() {
