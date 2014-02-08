@@ -6,7 +6,6 @@ if (!defined('BASEPATH'))
 class Gatos extends CI_Controller {
 
     public function index() {
-        $this->load->database();
         $this->load->model('Gato');
         $data['gatos'] = $this->Gato->findAll();
         $data['nosotros'] = $this->InfoNosotros->find();
@@ -38,11 +37,11 @@ class Gatos extends CI_Controller {
             $this->Gato->urlFoto = $this->input->post('urlFoto');
             $this->Gato->insert();
             $data['mensaje'] = 'Gato agregado';
-        $data['nosotros'] = $this->InfoNosotros->find();
+            $data['nosotros'] = $this->InfoNosotros->find();
             $this->load->view('resultado_operacion', $data);
         } else {
-        $data['nosotros'] = $this->InfoNosotros->find();
-            $this->load->view('gato_agregar');
+            $data['nosotros'] = $this->InfoNosotros->find();
+            $this->load->view('gato_agregar', $data);
         }
     }
 

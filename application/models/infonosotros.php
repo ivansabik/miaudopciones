@@ -12,7 +12,7 @@ class InfoNosotros extends CI_Model {
     public $fb;
     public $telCel;
     public $telFijo;
-    public $tema;
+    public $comboEstilo;
 
     function __construct() {
         parent::__construct();
@@ -30,7 +30,8 @@ class InfoNosotros extends CI_Model {
         $infoNosotros->fb = $resultados->fb;
         $infoNosotros->telCel = $resultados->telCel;
         $infoNosotros->telFijo = $resultados->telFijo;
-        $infoNosotros->tema = $resultados->tema;
+        //$infoNosotros->comboEstilo = de id a string con estilo;
+        $infoNosotros->comboEstilo = 'bootstrap-yeti.css';
         return $infoNosotros;
     }
 
