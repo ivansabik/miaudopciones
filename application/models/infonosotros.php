@@ -30,8 +30,7 @@ class InfoNosotros extends CI_Model {
         $infoNosotros->fb = $resultados->fb;
         $infoNosotros->telCel = $resultados->telCel;
         $infoNosotros->telFijo = $resultados->telFijo;
-        //$infoNosotros->comboEstilo = de id a string con estilo;
-        $infoNosotros->comboEstilo = 'bootstrap-yeti.css';
+        $infoNosotros->comboEstilo = $this->getComboEstilo($resultados->comboEstilo);
         return $infoNosotros;
     }
 
@@ -76,6 +75,11 @@ class InfoNosotros extends CI_Model {
             'telFijo' => $this->telFijo
         );
         $this->db->update('infoNosotros', $data, "1 = 1");
+    }
+
+    private function getComboEstilo($idComboEstilo) {
+        $query = $this->db->query('SELECT nombreArchivo FROM comboEstilo where id=' . $idComboEstilo);
+        return $resultados = $query->row()->nombreArchivo;
     }
 
 }
