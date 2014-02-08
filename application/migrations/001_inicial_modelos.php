@@ -110,6 +110,24 @@ class Migration_inicial_modelos extends CI_Migration {
         );
         $this->dbforge->add_field($fields);
         $this->dbforge->create_table('gatos');
+		
+		
+		
+		// comboEstilos
+        $this->dbforge->add_field('id');
+        $fields = array(
+            'nombre' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '20',
+            ),
+            'nombreArchivo' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        $this->dbforge->create_table('comboEstilo');
+		
 
         // Info Nosotros
         $fields = array(
@@ -150,10 +168,10 @@ class Migration_inicial_modelos extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '10',
             ),
-            'tema' => array(
-                'type' => 'VARCHAR',
-                'constraint' => '20',
-                'default' => 'flatly',
+            'comboEstilo' => array(
+                'type' => 'INT',
+                'constraint' => '10',
+                'default' => '1',
             ),
         );
         $this->dbforge->add_field($fields);
