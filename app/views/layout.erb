@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%=@nosotros.nombre %></title>
+        <link href="/<%=@nosotros.estilo %>" rel="stylesheet" type="text/css">
+        <link href="/css/estilo.css" rel="stylesheet" type="text/css">
+        <script src="/js/jquery-1.11.1.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.nailthumb.1.1.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('.fotoperfil').nailthumb({width: 350, height: 350, containerClass: 'img-rounded', method: 'resize'});
+                $('.fotolistado').nailthumb({width: 150, height: 150, containerClass: 'img-rounded'});
+                $('.logo').nailthumb({width: 500, height: 200, method: 'resize'});
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row centrado logo">
+                <img src="/img/logo.png"/>
+            </div>
+            <div class="row navbar navbar-default" role="navigation">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/gatos">Nuestros Gatos</a></li>
+                        <li><a href="#">Últimas adopciones</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="/nosotros">Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+            <%= yield %>
+            <div class="footer centrado">
+                <p>Miaudopciones</p>
+            </div>
+        </div>
+    <%= yield_content :javascript  %>
+    </body>
+</html>

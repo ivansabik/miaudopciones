@@ -1,0 +1,21 @@
+<h1>Nuestros gatos</h1>
+<table class="table" width="50%">
+    <thead>
+        <tr>
+            <th style="width: 20%"></th>
+            <th style="width: 20%">Nombre</th>
+            <th style="width: 20%">Edad</th>
+            <th style="width: 40%">Sexo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @gatos.each do |gato| %>
+            <tr>
+                <td><div class="fotolistado"><a href="gatos/<%= gato.id %>"><img src="<%= gato.thumbnail %>"/></a></div></td>
+                <td><%= gato.nombre %></td>
+                <td><%= gato.edad %></td>
+                <td><%= gato.texto_sexo %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
