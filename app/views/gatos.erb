@@ -13,12 +13,12 @@
     <tbody>
         <% @gatos.each do |gato| %>
             <tr>
-                <td><div class="fotolistado"><a href="gatos/<%= gato.id %>"><img src="<%= gato.thumbnail %>"/></a></div></td>
+                <td><div class="fotolistado"><a href="/gatos/<%= gato.id %>"><img src="<%= gato.thumbnail %>"/></a></div></td>
                 <td><%= gato.nombre %></td>
                 <td><%= gato.texto_edad %></td>
                 <td><%= gato.texto_sexo %></td>
                 <!-- No se ven si no está loggeado -->
-                <td><a href="#">Eliminar</a> | <a href="#">Modificar</a></td>
+                <td><a href="/gatos/eliminar/<%= gato.id %>">Eliminar</a> | <a href="/gatos/modificar/<%= gato.id %>">Modificar</a></td>
             </tr>
         <% end %>
     </tbody>

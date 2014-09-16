@@ -1,0 +1,47 @@
+<form action="/gatos/modificar/<%=@gato.id %>" method="POST" role="form"> 
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre" value="<%=@gato.nombre %>">
+    </div>
+    <div class="form-group">
+        <label>Alias</label>
+        <input type="text" class="form-control" name="alias" value="<%=@gato.apodos %>">
+    </div>
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="text" class="form-control" name="edad" value="<%=@gato.edad %>">
+    </div>
+    <div class="form-group">
+        <label>Color</label>
+        <input type="text" class="form-control" name="color" value="<%=@gato.color %>">
+    </div>
+    <div class="form-group">
+        <label>Raza</label>
+        <input type="text" class="form-control" name="raza" value="<%=@gato.raza %>">
+    </div>
+    <div class="form-group">
+        <label>Descripción</label>
+        <textarea class="form-control" rows="3" name="descripcion" value="<%=@gato.descripcion %>"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Sexo</label>
+        <select class="form-control" name="macho">
+            <% if @gato.macho %>            
+                <option value="0">Hembra</option>
+                <option value="1"selected="selected">Macho</option>
+            <% else %>
+                <option value="0" selected="selected">Hembra</option>
+                <option value="1">Macho</option>
+            <% end %>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Historia médica</label>
+        <textarea class="form-control" rows="3" name="historia_medica" value="<%=@gato.historia_medica %>"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Foto para listado</label>
+        <input type="text" class="form-control" name="thumbnail" value="<%=@gato.thumbnail %>">
+    </div>
+    <button type="submit" class="btn btn-default">Modificar</button>
+</form>

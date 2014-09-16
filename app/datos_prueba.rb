@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # datos_prueba.rb
-require './clases/gato'
-require './clases/info_nosotros'
+require './models/gato'
+require './models/info_nosotros'
 
 info_nosotros = InfoNosotros.new(:nombre => 'Kitlers',
     :lat => 19.3963,

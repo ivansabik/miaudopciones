@@ -43,6 +43,46 @@ post '/gatos/agregar' do
     erb :resultado_operacion
 end
 
+get '/gatos/eliminar/:id_gato' do
+    id_gato = params[:id_gato]
+    gato = Gato.find(id_gato)
+    gato.destroy
+    @resultado = 'Gato eliminado'
+    @nosotros = InfoNosotros.first
+    erb :resultado_operacion
+end
+
+get '/gatos/modificar/:id_gato' do
+id_gato = params[:id_gato]
+    id_gato = params[:id_gato]
+    @gato = Gato.find(id_gato)
+    @nosotros = InfoNosotros.first
+    erb :gato_modificar
+end
+
+post '/gatos/modificar/:id_gato' do
+    id_gato = params[:id_gato]
+    gato = Gato.find(id_gato)
+    if params[:macho] == '1'
+        macho = true
+    else
+        mache = false
+    end
+    gato.nombre = params[:nombre]
+    gato.apodos = params[:alias]
+    gato.edad = params[:edad]
+    gato.color = params[:color]
+    gato.raza = params[:raza]
+    gato.descripcion = params[:descripcion]
+    gato.macho = macho
+    gato.historia_medica = params[:historia_medica]
+    gato.thumbnail = params[:thumbnail]
+    gato.save
+    @resultado = 'Gato modificado'
+    @nosotros = InfoNosotros.first
+    erb :resultado_operacion
+end
+
 get '/gatos/:id_gato' do
     id_gato = params[:id_gato]
     @gato = Gato.find(id_gato)
@@ -60,14 +100,6 @@ get '/login' do
     erb :login
 end
 
-get '/gatos/eliminar/:id_gato' do
-  "Eliminar gato #{params[:id_gato]}"
-end
-
-get '/gatos/editar/:id_gato' do
-  'Editar gato'
-end
-
 get '/adopciones/agregar' do
   'Agregar adpocion'
 end
@@ -76,7 +108,7 @@ get '/adopciones/eliminar/:id_gato' do
   "Eliminar adopcion #{params[:id_gato]}"
 end
 
-get '/formulario/editar' do
+get '/formulario/modificar' do
   'Editar formulario'
 end
 
@@ -84,7 +116,7 @@ get '/gatos/agregar-solicitud/:id_gato' do
   "Agregar solicitud #{params[:id_gato]}"
 end
 
-get '/nosotros/editar' do
+get '/nosotros/modificar' do
   'Editar info nosotros'
 end
 
