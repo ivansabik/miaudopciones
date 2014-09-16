@@ -1,71 +1,83 @@
 # app.rb
 require 'sinatra'
+require 'mongo_mapper'
+require './clases/gato'
+require './clases/info_nosotros'
 
 get '/' do
-    'Hello, world!'
+  redirect to('/gatos')
 end
 
-# login	
-get '/login' do
-	'Login'
-end
-
-# gatos	
+# gatos  
 get '/gatos' do
-	'Gatos'
+  gatos = Gato.all
+  gatos.to_json
 end
 
-# gatos/agregar	
-get '/gatos/agregar' do
-	'Agregar gato'
+# gatos/{id}  
+get '/gatos/:id_gato' do
+  id_gato = params[:id_gato]
+  gato = Gato.find(id_gato)
+  gato.to_json
 end
 
-# gatos/eliminar/{id}	
-get '/gatos/eliminar/:id_gato' do
-	"Eliminar gato #{params[:id_gato]}"
-end
-
-# gatos/editar/{id}	
-get '/gatos/editar/:id_gato' do
-	'Editar gato'
-end
-
-# adopciones/agregar	
-get '/adopciones/agregar' do
-	'Agregar adpocion'
-end
-
-# adopciones/eliminar/{id}	
-get '/adopciones/eliminar/:id_gato' do
-	"Eliminar adopcion #{params[:id_gato]}"
-end
-
-# formulario/editar	
-get '/formulario/editar' do
-	'Editar formulario'
-end
-
-# gatos/agregar-solicitud/{id}	
-get '/gatos/agregar-solicitud/:id_gato' do
-	"Agregar solicitud #{params[:id_gato]}"
-end
-
-# nosotros/editar	
-get '/nosotros/editar' do
-	'Editar info nosotros'
-end
-
-# nosotros	
+# nosotros  
 get '/nosotros' do
-	'Ver info nosotros'
+
+  'Ver info nosotros'
+end
+
+# login  
+get '/login' do
+  'Login'
+end
+
+# gatos/agregar  
+get '/gatos/agregar' do
+  'Agregar gato'
+end
+
+# gatos/eliminar/{id}  
+get '/gatos/eliminar/:id_gato' do
+  "Eliminar gato #{params[:id_gato]}"
+end
+
+# gatos/editar/{id}  
+get '/gatos/editar/:id_gato' do
+  'Editar gato'
+end
+
+# adopciones/agregar  
+get '/adopciones/agregar' do
+  'Agregar adpocion'
+end
+
+# adopciones/eliminar/{id}  
+get '/adopciones/eliminar/:id_gato' do
+  "Eliminar adopcion #{params[:id_gato]}"
+end
+
+# formulario/editar  
+get '/formulario/editar' do
+  'Editar formulario'
+end
+
+# gatos/agregar-solicitud/{id}  
+get '/gatos/agregar-solicitud/:id_gato' do
+  "Agregar solicitud #{params[:id_gato]}"
+end
+
+# nosotros/editar  
+get '/nosotros/editar' do
+  'Editar info nosotros'
 end
 
 # adopciones/
 get '/adopciones' do
-	'Ver lista de adoptantes'
+  'Ver lista de adoptantes'
 end
 
-# adopciones/
+# adopciones/{id}
 get '/adopciones/:id_adopcion' do
-	"Ver adopcion #{params[:id_adopcion]}"
+  "Ver adopcion #{params[:id_adopcion]}"
 end
