@@ -9,7 +9,7 @@
         <h3>Alias</h3>
         <p><%=@gato.apodos %></p>
         <h3>Edad</h3>
-        <p><%=@gato.texto_edad() %></p>
+        <p><%=@gato.texto_edad %></p>
         <h3>Color</h3>
         <p><%=@gato.color %></p>
         <h3>Raza</h3>
@@ -19,9 +19,12 @@
         <h3>Historia médica</h3>
         <p><%=@gato.historia_medica %></p>
         <h3>Sexo</h3>
-        <p><%=@gato.texto_sexo() %></p>
+        <p><%=@gato.texto_sexo %></p>
         <div class="botonadopcion">
             <a href="#" class="btn btn-default">Llenar solicitud de adopción</a>
         </div>
+        <!-- No se ven si no está loggeado -->
+        <p></p>
+        <a href="#">Eliminar</a> | <a href="#">Modificar</a>
     </div>
 </div>
