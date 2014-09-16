@@ -32,7 +32,7 @@ class Gato
     end
     
     def texto_sexo()
-        return 'Gato' if @macho
-        return 'Gata'
+        return 'Macho' if @macho
+        return 'Hembra'
     end
 end

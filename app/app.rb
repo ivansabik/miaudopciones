@@ -1,5 +1,6 @@
 # app.rb
 require 'sinatra'
+require 'sinatra/content_for'
 require 'mongo_mapper'
 require './clases/gato'
 require './clases/info_nosotros'
@@ -11,20 +12,23 @@ end
 # gatos  
 get '/gatos' do
   gatos = Gato.all
-  gatos.to_json
+  @gatos = gatos
+  @nosotros = InfoNosotros.first
+  erb :gatos
 end
 
 # gatos/{id}  
 get '/gatos/:id_gato' do
   id_gato = params[:id_gato]
-  gato = Gato.find(id_gato)
-  gato.to_json
+  @gato = Gato.find(id_gato)
+  @nosotros = InfoNosotros.first
+  erb :gato_info
 end
 
 # nosotros  
 get '/nosotros' do
-
-  'Ver info nosotros'
+  @nosotros = InfoNosotros.first
+  erb :nosotros_info
 end
 
 # login  

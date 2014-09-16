@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-6">
+        <h1><%=@nosotros.nombre %></h1>
+        <p><%=@nosotros.descripcion %></p>
+        <h3>Correo electronico</h3>
+        <p><%=@nosotros.email %></p>
+        <h3>Telefonos</h3>
+        <p>Cel: <%=@nosotros.movil %></p>
+        <p>Fijo: <%=@nosotros.fijo %></p>
+        <h3>Facebook</h3>
+        <p><%=@nosotros.fb %></p>
+    </div>
+    <div class="col-md-6">
+        <h3>Nuestra ubicacion</h3>
+        <div id="mapa"></div>
+    </div>
+</div>
+
+<% content_for :javascript do %>
+    <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="js/gmaps.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var map = new GMaps({
+                div: '#mapa',
+                lat: <%=@nosotros.lat %>,
+                lng: <%=@nosotros.lon %>
+            });
+            map.addMarker({
+                lat: <%=@nosotros.lat %>,
+                lng: <%=@nosotros.lon %>
+            });
+        });
+    </script>
+<% end %>

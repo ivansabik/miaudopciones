@@ -1,0 +1,14 @@
+.centrado {
+    width: 400px;
+    margin: 0px auto;
+}
+.footer {
+    padding-top: 50px;
+}
+.botonadopcion {
+    padding-top: 25px;
+}
+#mapa {
+    width: 500px;
+    height: 500px;
+}

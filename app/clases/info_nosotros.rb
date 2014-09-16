@@ -12,7 +12,7 @@ class InfoNosotros
     key :hashim, String
     key :email, String
     key :fb, String
-    key :movil, String
-    key :fijo, String
+    key :tel_movil, String
+    key :tel_fijo, String
     key :estilo, String
 end
