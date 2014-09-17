@@ -1,0 +1,15 @@
+<form action="/nosotros/modificar" method="POST" role="form"> 
+    <div class="form-group">
+        <label>Estilo</label>
+        <select class="form-control" name="estilo">
+        <% @estilos.each do |estilo| %>
+            <% if estilo == @nosotros.estilo[0..-5] %>
+                <option value="<%=estilo %>" selected="selected"><%=estilo %></option>
+            <% else %>
+                <option value="<%=estilo %>"><%=estilo %></option>
+            <% end %>
+        <% end %>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default">Modificar</button>
+</form>

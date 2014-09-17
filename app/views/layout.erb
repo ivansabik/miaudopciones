@@ -4,13 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><%=@nosotros.nombre %></title>
-        <link href="/<%=@nosotros.estilo %>" rel="stylesheet" type="text/css">
+        <link href="/css/estilos/<%=@nosotros.estilo %>" rel="stylesheet" type="text/css">
         <link href="/css/estilo.css" rel="stylesheet" type="text/css">
+        <link href="/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+        <link href="/css/jquery.nailthumb.1.1.min.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="container">
-            <div class="row centrado logo">
-                <img src="/img/logo.png"/>
+            <div class="row centrado logo titulo">
+                <span><%=@nosotros.nombre %></span>
             </div>
             <div class="row navbar navbar-default" role="navigation">
                 <div class="navbar-collapse collapse">
@@ -22,7 +24,7 @@
                         <!-- No se ven si no está loggeado -->
                         <li><a href="/gatos/agregar">Agregar Gato</a></li>
                         <li><a href="#">Historial adopciones</a></li>
-                        <li><a href="#">Editar info org.</a></li>
+                        <li><a href="/nosotros/modificar">Modificar info</a></li>
                 </div>
             </div>
             <%= yield %>

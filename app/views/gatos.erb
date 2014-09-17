@@ -1,8 +1,8 @@
 <h1>Nuestros gatos</h1>
-<table class="table" width="50%">
+<table class="table" id="gatos">
     <thead>
         <tr>
-            <th></th>
+            <th class="columna_foto"></th>
             <th>Nombre</th>
             <th>Edad</th>
             <th>Sexo</th>
@@ -13,8 +13,8 @@
     <tbody>
         <% @gatos.each do |gato| %>
             <tr>
-                <td><div class="fotolistado"><a href="/gatos/<%= gato.id %>"><img src="<%= gato.thumbnail %>"/></a></div></td>
-                <td><%= gato.nombre %></td>
+                <td class="columna_foto"><div class="fotolistado"><a href="/gatos/<%= gato.id %>"><img src="<%= gato.thumbnail %>"/></a></div></td>
+                <td><h3><%= gato.nombre %></h3></td>
                 <td><%= gato.texto_edad %></td>
                 <td><%= gato.texto_sexo %></td>
                 <!-- No se ven si no está loggeado -->
@@ -23,3 +23,12 @@
         <% end %>
     </tbody>
 </table>
+<% content_for :javascript do %>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script>
+    $(function() {
+        $('#gatos').dataTable();
+    });
+    </script>
+<% end %>
+

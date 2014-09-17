@@ -117,8 +117,25 @@ get '/gatos/agregar-solicitud/:id_gato' do
 end
 
 get '/nosotros/modificar' do
-  'Editar info nosotros'
+    estilos = []
+    Dir.entries('./public/css/estilos').each do |estilo|
+        estilos << estilo[0..-5] unless estilo=~ /^\.\.?$/
+    end
+    @estilos = estilos
+    @nosotros = InfoNosotros.first
+    erb :nosotros_modificar
 end
+
+post '/nosotros/modificar' do
+    estilo = params[:estilo]
+    nosotros = InfoNosotros.first
+    nosotros.estilo = estilo << '.css'
+    nosotros.save
+    @resultado = 'Info de la organizacion modificada'
+    @nosotros = InfoNosotros.first
+    erb :resultado_operacion
+end
+
 
 get '/adopciones' do
   'Ver lista de adoptantes'
