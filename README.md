@@ -17,4 +17,12 @@ Tiene integración con FB para publicar Eventos, Fotos, Likes en los perfiles, e
 
 ```cd app```
 
+```ruby datos_prueba.rb```
+
 ```ruby app.rb```
+
+### Funcionalidades
+
+![Home](https://raw.githubusercontent.com/mandroslabs/miaudopciones/master/doc/screen.png)
+
+![Nosotros](https://raw.githubusercontent.com/mandroslabs/miaudopciones/master/doc/screen2.png)
