@@ -26,3 +26,7 @@ Tiene integración con FB para publicar Eventos, Fotos, Likes en los perfiles, e
 ![Home](https://raw.githubusercontent.com/mandroslabs/miaudopciones/master/doc/screen.png)
 
 ![Nosotros](https://raw.githubusercontent.com/mandroslabs/miaudopciones/master/doc/screen2.png)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ivansabik/miaudopciones/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
